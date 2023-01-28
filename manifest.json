@@ -1,0 +1,11 @@
+{
+  "name": "Transphere L10N",
+  "id": "1179228110397072963",
+  "api": "1.0.0",
+  "main": "dist/code.js",
+  "ui": "dist/ui.html",
+  "editorType": [
+    "figma",
+    "figjam"
+  ]
+}

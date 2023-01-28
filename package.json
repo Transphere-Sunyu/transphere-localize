@@ -1,0 +1,44 @@
+{
+  "name": "Trans Localize",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "John Oula",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --mode=production",
+    "build:watch": "webpack --mode=development --watch",
+    "preview:plugin": "webpack --mode=development --PREVIEW_ENV=figma --watch",
+    "preview:browser": "node preview-server.js & webpack-dev-server --mode=development --PREVIEW_ENV=browser"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^2.4.4",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@figma/plugin-typings": "*",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "framer-motion": "^8.0.2",
+    "postcss": "^8.2.10",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-loader-spinner": "^5.3.4",
+    "typescript": "*",
+    "url-loader": "^2.1.0"
+  },
+  "devDependencies": {
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
+    "css-loader": "^3.1.0",
+    "express": "^4.17.1",
+    "fork-ts-checker-webpack-plugin": "^6.2.4",
+    "html-webpack-inline-source-plugin": "0.0.10",
+    "html-webpack-plugin": "^3.2.0",
+    "react-refresh": "^0.1.0",
+    "react-refresh-typescript": "^1.1.0",
+    "style-loader": "^0.23.1",
+    "ts-loader": "^6.0.4",
+    "webpack": "^4.41.4",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.11.2",
+    "ws": "^7.4.5"
+  }
+}

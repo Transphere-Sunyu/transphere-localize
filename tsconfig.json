@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "lib": [ "es6", "dom","es2021"],
+    "jsx": "react",
+    "skipLibCheck": false,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./node_modules/@figma"
+    ],
+
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node"
+  }
+}
