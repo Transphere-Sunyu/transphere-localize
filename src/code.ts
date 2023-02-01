@@ -130,6 +130,8 @@ figma.ui.onmessage = async (msg) => {
 
           const strings = JSON.parse(msg.payload);
 
+          let textObj = {}
+
           // console.log(node[112]);
           node.map((each, i) => {
             const k = each.name;
@@ -139,10 +141,18 @@ figma.ui.onmessage = async (msg) => {
 
             // const translation = strings[k]
 
+
             if (keyName && !undefined && !each.hasMissingFont) {
               // each.deleteCharacters(0,3)
+              Object.assign(textObj,{
+                key : keyName,
+                text : each.characters,
+
+              })
               each.characters = keyName;
             }
+            console.log(textObj);
+            
           });
         })
         .catch((err) =>{

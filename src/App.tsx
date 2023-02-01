@@ -15,6 +15,7 @@ function App() {
   const [saved, setSaved] = useState(false)
   const [error, setError] = useState('')
   const [success, setSuccess] = useState('')
+  const [showKeys,setShowKeys] = useState(false)
 
   const url = 'https://api.locize.app'
 
@@ -55,6 +56,7 @@ function App() {
   // Display keys from nodes
 
   const displayKeys = async  (locale:string) => {
+    setShowKeys(true)
     const res = await fetch(
       `${url}/${projectId}/${version}/${locale}/${namespace}`,
       {
@@ -66,6 +68,18 @@ function App() {
 
     return window.parent.postMessage(
       { pluginMessage: { type: "displayKeys", payload: JSON.stringify(strings) } },
+      "*"
+    );
+  };
+
+  // Display keys from nodes
+
+  const displayText = async  () => {
+    setShowKeys(false)
+
+
+    return window.parent.postMessage(
+      { pluginMessage: { type: "displayText" } },
       "*"
     );
   };
@@ -304,8 +318,8 @@ function App() {
         {/* <button onClick={screenshot} id="screenshot"  className={`outline-btn`}>
           Screenshots
         </button> */}
-        <button onClick={() => displayKeys(selectedLang)} id="extract" className={`outline-btn`}>
-          Display Keys
+        <button onClick={() =>{ showKeys ? displayKeys(selectedLang) : displayText()}} id="extract" className={`outline-btn`}>
+          { setShowKeys ? 'Display Keys' : 'Show text'}
         </button>
         <div></div>
       </div>
